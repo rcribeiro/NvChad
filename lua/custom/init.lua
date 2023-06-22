@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 opt.relativenumber = true
+opt.number = true
 
 -- Move selected text up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
