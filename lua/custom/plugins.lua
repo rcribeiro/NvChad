@@ -87,6 +87,12 @@ local plugins = {
     end,
   },
 
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require("telescope").setup(overrides.telescope)
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

@@ -12,6 +12,7 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "bash",
   },
   indent = {
     enable = true,
@@ -37,6 +38,7 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    "pkgbuild_language_server",
   },
 }
 
@@ -52,6 +54,22 @@ M.nvimtree = {
       show = {
         git = true,
       },
+    },
+  },
+}
+
+M.telescope = {
+  defaults = {
+    vimgrep_arguments = {
+      "rg",
+      "--hidden",  -- This line is added
+      "-L",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
     },
   },
 }
