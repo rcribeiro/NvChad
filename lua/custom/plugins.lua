@@ -93,6 +93,36 @@ local plugins = {
       require("telescope").setup(overrides.telescope)
     end,
   },
+  {
+    "kosayoda/nvim-lightbulb",
+    config = function()
+      require("nvim-lightbulb").setup({
+        autocmd = {
+            enabled = true,
+            updatetime = 200,
+            events = { "CursorHold", "CursorHoldI" },
+            pattern = { "*" },
+        },
+        sign = {
+            enabled = true,
+            text = "💡",
+            hl = "LightBulbSign",
+        },
+        virtual_text = {
+            enabled = true,
+            text = "💡",
+            pos = "eol",
+            hl = "LightBulbVirtualText",
+            hl_mode = "combine",
+        },
+        status_text = {
+            enabled = true,
+            text = "💡",
+            text_unavailable = "",
+        },
+      })
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
