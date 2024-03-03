@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "terraformls", "yamlls" }
+local servers = { "html", "cssls", "tsserver", "clangd", "terraformls", "yamlls", "marksman" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -33,3 +33,9 @@ lspconfig.yamlls.setup({
   capabilities = capabilities,
   filetypes = {"yaml"},
 })
+
+lspconfig.marksman.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+

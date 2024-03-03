@@ -13,6 +13,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "bash",
+    "terraform"
   },
   indent = {
     enable = true,
@@ -39,6 +40,8 @@ M.mason = {
     "clangd",
     "clang-format",
     "pkgbuild_language_server",
+
+    "marksman"
   },
 }
 
