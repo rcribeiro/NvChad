@@ -2,14 +2,13 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
-
-  -- Override plugin definition options
   {
     'tpope/vim-fugitive',
     'tpope/vim-rhubarb',
   },
   {
     "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
     config = function ()
       local dap = require("dap")
@@ -28,7 +27,8 @@ local plugins = {
   },
   {
     "mfussenegger/nvim-dap",
-    config = function (_, opts)
+    config = function()
+      require "custom.configs.dap"
       require("core.utils").load_mappings("dap")
     end
   },
@@ -51,6 +51,7 @@ local plugins = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
+        event = "VeryLazy",
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -59,7 +60,7 @@ local plugins = {
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-    end, -- Override to setup mason-lspconfig
+    end,
   },
 
   -- override plugin configs
@@ -135,6 +136,16 @@ local plugins = {
   -- {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
+  -- }
+  --
+  --This next plugin is meant to replace null-ls for linting, but I commented out because it only triggers when we save the files
+  --I'll continue using null-ls for a while
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   event = "VeryLazy",
+  --   config = function ()
+  --     require "custom.config.lint"
+  --   end
   -- }
 }
 

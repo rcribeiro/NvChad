@@ -33,13 +33,15 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
+    "eslint-lsp",
+    "js-debug-adapter",
     "deno",
     "prettier",
 
     -- c/cpp stuff
     "clangd",
     "clang-format",
-    "pkgbuild_language_server",
+    -- "pkgbuild_language_server",
 
     "marksman"
   },
